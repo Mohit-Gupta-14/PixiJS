@@ -60,13 +60,14 @@ function drawCards(stage) {
     for (let j = 0; j < 3; j++) {
       for (let c = 0; c < 2; c++) {
         const card = getCard(cardNum, new Rectangle(...FRAMES[cardNum]));
-        stage.addChild(card.view);
         cards.push(card);
       }
       cardNum++;
     }
   }
+  console.log(cards);
   shuffle(cards);
+  console.log(cards)
   let count = 0;
   for (let c = 0; c < 6; c++) {
     for (let r = 0; r < 4; r++) {
@@ -74,6 +75,7 @@ function drawCards(stage) {
       card.view.x = c * (WIDTH + paddingX) + offsetX;
       card.view.y = r * (HEIGHT + paddingY) + offsetXY;
       count++;
+      stage.addChild(card.view);
     }
   }
   return cards;

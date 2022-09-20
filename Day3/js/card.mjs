@@ -36,7 +36,7 @@ export function getCard(id, frame) {
   back.interactive = true;
   back.on("pointerup", () => {
     isClicked = true;
-    back.visible = false;
+    // back.visible = false;
     front.visible = true;
   });
   return {
